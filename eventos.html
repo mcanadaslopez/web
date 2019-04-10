@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+		<meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Web de pollos San Juan">
+        <meta name="author" content="">  
+        <meta name="content" content="pollos san juan,pollos san juan almeria,asador de pollos">
+        <link rel="stylesheet" type="text/css" href="css/style.css">     
+        <link rel="icon" href="img/logo.jpg">
+	<title>Haga su pedido</title>
+	<script >
+			function subtotal()
+			{
+
+				var subt = document.getElementsByClassName("cal1");	
+				//alert(subt.length);
+				var subto= document.getElementsByClassName("scal1");	
+				var precio = document.getElementsByClassName("pvp");
+				var TotArti = document.getElementById("totarticulos");
+				TotArti.value=0;				
+				var TotImpo = document.getElementById("totimporte");
+				TotImpo.value=0;
+				var cadena;
+				//var precio=8.50;	
+				var trabajo;
+
+				for (x=0;x<subt.length;x++)
+				{
+					trabajo=subt[x].value * precio[x].value;
+					//subto[x].value=subt[x].value * precio[x].value;
+					subto[x].value=trabajo.toFixed(2);
+					
+					
+					
+				}
+
+				var totalarticulo=0;
+				var totalimporte=0;	
+			
+				//TotImpo.toFixed(2);	
+				for(x=0;x<subt.length;x++)
+				{
+					TotArti.value=parseInt(TotArti.value) + parseInt(subt[x].value);
+					TotImpo.value=parseFloat(TotImpo.value)  + parseFloat(subto[x].value) ;
+ 				}
+ 				trabajo=0;
+ 				trabajo=TotImpo.value;
+
+ 				TotImpo.value=trabajo.toFixed(2); 
+				//alert(parseInt(totalarticulo));
+				
+				
+				
+		}
+	</script>
+</head>
+
+<body>
+	<!--  Seccion Cabecera -->
+	
+	<div id="cabecera">
+		<h1 title="Los del Zapillo ... Desde 1972 prueba">Asociación Empresarios Júpiter</h1>
+	</div>
+	<div id=navegacion>
+		<ul>
+	<li><div class="item"><a href="index.html">Inicio</a></div></li>
+			<li><div class="item"><a href="empresa-1.html">Sobre Nosotros</a></div></li>
+			<li><div class="item"><a href="ofertas.html">Ofertas</a></div></li>
+			<li><div class="item"><a href="#">Pedidos</a></div></li>
+			<li><div class="item"><a href="alergias.html">Alergénicos</a></div></li>
+			<li><div class="item"><a href="blog.html">Blog</a></div></li>
+			<li><div class="item"><a target="_blank" href="clientes.html">Clientes</a></div></li>
+			<li><div class="item"><a target="_blank" href="contacto.html">Contacto</a></div></li>
+			<li>
+				<form>
+				<input type="text" name="buscar" title="Buscar.." value=" Buscar...">
+				<button class="boton">Buscar</button>
+				</form></li>
+		</ul>
+		
+	</div>
+
+
+
+
+	<!-- FORMULARIO DE PEDIDOS ******************************************************************* -->
+
+	<div class="titulo"><h1>Formulario de Pedidos</h1></div>
+ 			<div class="formulario">
+                <form id="formcontacto" name="formcontacto" method="post" action="enviar()">
+                    <fieldset id="datos_personales">
+                     <legend><b>Los campos marcados con (*) son obligatorios</b></legend>
+
+                     	<label>Nombre *</label>
+                        <br>
+                        <input name=nombre type="text">
+                        <br><br>
+
+                        <label>Apellidos</label>
+                        <br>
+                        <input name=apellidos type="text">
+                        <br><br>
+
+                        <label>Teléfono *</label>
+                        <br>
+                        <input name=telefono type="text">
+                        <br><br>
+
+                        <label>Email *</label>
+                        <br>
+                        <input name=telefono type="email">
+                        <br><br>
+
+                        <label>Hora Recogida en local*</label>
+                        <br>
+                        <input name=telefono type="time" min="12:00" max="16:00">
+                        <br><br>
+
+                       
+                    </fieldset> 
+                    <br>
+                    <fieldset id="datos_pedidos">
+                    	
+							<legend>Productos del pedido</legend>
+							
+	                       
+                        
+					
+							<table id="tabla_pedidos">
+								
+								<tr>
+									
+									<th>Articulo</th>
+									<th>Precio</th>
+									<th>(Uds)</th>
+									<th>Importe €</th>
+								</tr>
+
+								<tr>
+									<td>Pollo</td>
+									<td><input class="pvp" type="text"  readonly  value="8.5"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0" ></td>				
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+									
+									
+								</tr>
+
+								<tr>
+									<td>Pimientos Fritos 1R</td>
+									<td><input class="pvp" type="text"  readonly  value="4.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value = "0" ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Pimientos Fritos 1/2</td>
+									<td><input class="pvp" type="text"  readonly  value="3.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Patatas Fritas 1R</td>
+									<td><input class="pvp" type="text"  readonly  value="4.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Patatas Fritas 1/2</td>
+									<td><input class="pvp" type="text"  readonly  value="3.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Croquetas 6 Uds</td>
+									<td><input class="pvp" type="text"  readonly name="Udspollo" value="4.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Croquetas 12 Uds</td>
+									<td><input class="pvp" type="text"  readonly name="Udspollo" value="3.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Berengenas Fritas 1R</td>
+									<td><input class="pvp" type="text"  readonly name="Udspollo" value="5.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Berengenas Fritas 1/2</td>
+									<td><input class="pvp" type="text"  readonly name="Udspollo" value="3.75"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0" ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Lata Refresco 33cl</td>
+									<td><input class="pvp" type="text"  readonly name="Udspollo" value="0.80"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+								<tr>
+									<td>Bot. Refresco 50cl</td>
+									<td><input class="pvp" type="text"  readonly name="Udspollo" value="1.00"  ></td>
+									<td><input class="cal1" type="number" name="Udspollo" min="0" max="100" value="0"  ></td>
+									<td><input class="scal1" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+														
+								<tr>
+									<td><h3>Total Pedido</h3></td>
+									<td><input hidden class="pvp"  type="text"  readonly name="Udspollo" value="1.00"  ></td>
+									<td><input id="totarticulos"  type="number" readonly value="0"   ></td>
+									<td><input id="totimporte" type="number" readonly onmousedown value="0"   > </td>
+								</tr>
+
+								
+
+
+
+							</table>
+							<div class="j">
+								<input class="borrar" type="button" name="calcula" value="Calcular" onclick="subtotal()">
+								<input class="borrar" type="reset" value="Borrar" onclick="">
+							</div>
+						
+
+                    </fieldset>	
+                    <br>
+                    <fieldset id="comentario">
+	                      <legend><b>Observaciones al pedido</b></legend>
+	                      <textarea name="comentario" rows="14" cols="50"></textarea>
+	                      <br><br>
+
+	                       <label><mark>Alérgenos</mark></label>
+                       	   <br>
+                       	   <label>No</label>
+                           <input name=alergenos type="radio" value="1" checked="">
+                           <label>Si</label>
+                            <input name=alergenos type="radio" value="2">
+                           <br><br>
+	                     
+                    </fieldset>
+                    <br>
+                    <div class="j">
+                    <!--<input id="borrar" type="reset" value="Salir" onclick="window.close()"> -->
+                    
+                    <input class="enviar" type="submit" value="Enviar" onclick="" >
+                    <input class="enviar" type="submit" value="Confimar" onclick="">
+                    
+                    </div>
+                  
+                      
+                    
+                  
+                </form>
+            </div>
+
+	<!--  Seccion Pie (footer)  -->
+
+
+	<div id="pie" class="container-fluid">
+		<div>
+			<div class="pie-prueba">
+				<dl> 
+					
+				   	<dt>
+
+				   		<dd><h4>Enlaces de Interés</h4></dd>				   		
+				   		<dd><a href="http://www.renfe.com">Renfe</a></dd>
+				   		<dd><a href="http://www.adif.es/es_ES/infraestructuras/estaciones/56312/informacion_000069.shtml">Intermodal</a></dd>
+				   		<dd><a href="http://www.radiotaxialmeria.es/">Taxis</a></dd>
+				   		<dd><a href="http://www.surbus.com/">Bus Urbano</a></dd>
+				   		<dd><a href="http://www.aena.es/csee/Satellite/HomeAena">Aeropuerto de Almeria</a></dd>
+				   	
+				   
+				   
+				</dl>
+			</div>
+
+			<div class="pie-prueba">
+				<dl> 
+				   	<dt>
+				   		<dd><h4>Atención al Cliente</h4></dd> 				   		
+				   		<dd><a target="_blank" href="contacto.html">Contacto</a></dd>
+				   		<dd><a href="">Preguntas Frecuentes</a></dd>
+				   		
+				   	
+				   
+				</dl>
+			</div>
+
+			<div class="pie-prueba">
+				<dl> 
+				   	<dt> 
+				   		
+				   		<dd><h4>Asociación</h4> </dd>
+				   		
+				   		<dd><a href="empresa-1.html">Quiénes somos</a></dd>
+				   		<dd><a href="">Consejos, Ideas y Trucos</a></dd>
+				   		
+				   
+				   
+				   	
+				</dl>
+			</div>
+
+			<div>
+				<ul>
+					
+					
+					<li class="icono-pie"><a href=""><img  src="img/instagramo.jpg" alt="instagram"></a></li>
+					<li class="icono-pie"><a href="https://www.facebook.com/Pollos-SAN-JUAN-Carrera-del-Peru-18-572385959464713">
+						<img  src="img/facebook.png" alt="Face"></a></li>
+					<li class="icono-pie"><a href=""><img src="img/twittero.png" alt="twitter"></a></li>
+					<li><p class="copyright">2019 &copy; Pollos San Juan Todos los derechos reservados -
+		                        <a class="ancla" href="privacidad.html" title="Privacy"> Privacy - </a>
+		                        <a class="ancla" href="privacidad.html" title="Condiciones">Terms</a>
+		                </p>
+		            </li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	
+	
+</body>
+</html>
