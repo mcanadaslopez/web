@@ -1,0 +1,36 @@
+body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+  background-color: black;
+  color: white;
+ 
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  /*background-color: #fff;*/
+  background-color: black;
+  color: white;
+
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+.card-header, .card-body{
+  background-color: black;
+}
