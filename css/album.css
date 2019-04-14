@@ -1,6 +1,7 @@
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
-  background: black;
+  background-color: black;
+ 
 }
 
 .navbar {
@@ -89,8 +90,13 @@ footer p {
     background-color: transparent;
     border-bottom: .20rem solid transparent;
     border-bottom-color: red;
+    color: white;
   
   /*text-decoration: underline;*/
   
 
+}
+
+p.lead.text-muted, p{
+  color:white!important;
 }

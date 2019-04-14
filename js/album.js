@@ -2,7 +2,7 @@ $(document).ready(function(){
 	/*$("body").fadeOut(800, function(){
 		$("body").fadeIn(2000); */
 	
-	$(".jumbotron > .container > .display-4").hover(function()
+	$(".jumbotron > .container > .jumbotron-heading").hover(function()
 	{
 		$(this).css({
 		'color': 'red',
@@ -10,7 +10,7 @@ $(document).ready(function(){
 		});
 	});
 
-	$(".jumbotron > .container > .display-4").mouseleave(function()
+	$(".jumbotron > .container > .jumbotron-heading").mouseleave(function()
 	{
 		$(this).css({
 		'color': 'white',
@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 
 	
-	$(".container > .row > .col-md-4 > p:even").hover(function()
+	$(".jumbotron > .container > .lead").hover(function()
 	{
 		$(this).prev().css({
 			'color': '#BDBDBD',
@@ -31,12 +31,12 @@ $(document).ready(function(){
 			'padding-left' : 10,
 			'border-left' : "solid 1px",
 			'border-left-color' : 'red',
-			'font-size': '1rem',
+			'font-size': '1.5rem',
 
 		});
 	});
 
-	$(".container > .row > .col-md-4 > p:even").mouseleave(function()
+	$(".jumbotron > .container > .lead").mouseleave(function()
 	{
 		$(this).prev().css({
 			'color': 'white',
@@ -45,7 +45,7 @@ $(document).ready(function(){
 			
 			'padding-left' : 0,
 			'border-left' : "none",
-			'font-size': '0.90rem',
+			'font-size': '1.2rem',
 
 
 
@@ -60,5 +60,3 @@ $(document).ready(function(){
 	
 		
 });
-
-
