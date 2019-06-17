@@ -6,6 +6,12 @@ body {
   background-color: black;
   color: #D8D8D8;
   margin-bottom: 60px;
+ /*background-image: url("../img/descargas/alcazaba.jpg");
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: 1100px, 50%;
+ background-origin: content-box;*/
+
 
 }
 
@@ -14,8 +20,18 @@ p{
 }
 .jumbotron{
  background-color: black;
-  color: white;
+ color: white;
+ 
+ 
+
 }
+
+.carousel-inner img {
+      width: 50%;
+      height: 50%;
+      opacity: 0.6;
+  }
+
 
 .nvar {
 	background-color: black;
